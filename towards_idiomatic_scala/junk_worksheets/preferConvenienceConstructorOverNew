@@ -1,0 +1,43 @@
+object noReturnStatements {
+
+  // you can use the apply method on companion objects to create
+  // cleaner looking constructors, they feel like case classes.
+
+  object Person{
+    def apply(firstName: String, lastName: String): Person = {
+      new Person(firstName, lastName)
+    }
+  }
+
+  class Person(firstName: String, lastName: String){
+    def sayHello: String = {
+      "Hello, my name is " + firstName
+    }
+  }
+  
+  val d = new Person("Demian", "Neidetcher")      //> d  : noReturnStatements.Person = noReturnStatements$Person@4bdb699b
+  d.sayHello                                      //> res0: String = Hello, my name is Demian
+  
+  val c = Person("Courtney", "Neidetcher")        //> c  : noReturnStatements.Person = noReturnStatements$Person@7f2ad19e
+  c.sayHello                                      //> res1: String = Hello, my name is Courtney
+
+
+
+  object Car{
+    def apply(make: String, model: String): Car = new Car(make, model)
+  }
+  
+  class Car(make: String, model: String){
+    var currentGear: Int = 0
+    def showStatus: String = {
+      "I'm in the " + currentGear + "."
+    }
+  }
+  
+  val j = Car("Jeep", "Wrangler")
+  j.showStatus
+
+
+
+
+}
