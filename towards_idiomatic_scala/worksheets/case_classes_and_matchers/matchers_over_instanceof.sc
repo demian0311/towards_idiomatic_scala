@@ -20,4 +20,14 @@ object matchers_over_instanceof {
     
     howAboutThisPlant(apple)                      //> res0: String = found a fruit: apple
 
+    def howAboutThisPlant2(plant: Plant): String = {
+        plant match {
+            case Fruit(name)  => "found a fruit: " + name
+            case Vegetable(_) => "didn't expect a veggie"
+        }
+    }                                             //> howAboutThisPlant2: (plant: matchers_over_instanceof.Plant)String
+    
+    howAboutThisPlant2(apple)                     //> res1: String = found a fruit: apple
+
+
 }
