@@ -1,9 +1,9 @@
 import com.sun.org.apache.xalan.internal.xsltc.compiler.ForEach
 
 object using_collections_wrong {
-  val vegetables = Vector("asparagus", "brocolli", "cabbage")
+  val vegetables = Vector("asparagus", "broccoli", "cabbage")
                                                   //> vegetables  : scala.collection.immutable.Vector[java.lang.String] = Vector(a
-                                                  //| sparagus, brocolli, cabbage)
+                                                  //| sparagus, broccoli, cabbage)
   
 
   var hasCabbage: Boolean = false                 //> hasCabbage  : Boolean = false
