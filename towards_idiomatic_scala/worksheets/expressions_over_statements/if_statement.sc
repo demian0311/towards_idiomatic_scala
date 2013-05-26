@@ -35,4 +35,8 @@ object if_statement {
   status2(1)                                      //> res4: String = MINOR
   status2(65)                                     //> res5: String = RETIREE
   
+  if(true) "foo"                                  //> res6: Any = foo
+	if(false) "foo"                           //> res7: Any = ()
+  if(true) "foo" else "bar"                       //> res8: java.lang.String = foo
+  
 }
