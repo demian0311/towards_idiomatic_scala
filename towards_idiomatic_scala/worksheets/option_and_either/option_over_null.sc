@@ -27,23 +27,10 @@ object option_over_null {
       case None => false
     }
   }                                               //> isThisGreenVegetable1: (v: option_over_null.Vegetable)Boolean
+  
 
-  isThisGreenVegetable(Vegetable("asparagus", None))
-                                                  //> java.util.NoSuchElementException: None.get
-                                                  //| 	at scala.None$.get(Option.scala:274)
-                                                  //| 	at scala.None$.get(Option.scala:272)
-                                                  //| 	at option_over_null$$anonfun$main$1.isThisGreenVegetable$1(option_over_n
-                                                  //| ull.scala:20)
-                                                  //| 	at option_over_null$$anonfun$main$1.apply$mcV$sp(option_over_null.scala:
-                                                  //| 31)
-                                                  //| 	at org.scalaide.worksheet.runtime.library.WorksheetSupport$$anonfun$$exe
-                                                  //| cute$1.apply$mcV$sp(WorksheetSupport.scala:76)
-                                                  //| 	at org.scalaide.worksheet.runtime.library.WorksheetSupport$.redirected(W
-                                                  //| orksheetSupport.scala:65)
-                                                  //| 	at org.scalaide.worksheet.runtime.library.WorksheetSupport$.$execute(Wor
-                                                  //| ksheetSupport.scala:75)
-                                                  //| 	at option_over_null$.main(option_over_null.scala:3)
-                                                  //| 	at option_over_null.main(option_over_null.scala)
+  isThisGreenVegetable1(Vegetable("asparagus", None))
+                                                  //> res0: Boolean = false
 
 
 }

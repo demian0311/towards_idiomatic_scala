@@ -1,5 +1,5 @@
 object sealed_case_classes {
-    sealed abstract class Plant
+    class Plant
 
     case class Fruit(name: String) extends Plant
     case class Vegetable(name: String) extends Plant
@@ -23,6 +23,11 @@ object sealed_case_classes {
             case Vegetable(_) => "didn't expect a veggie"
         }                                         //> howAboutThisPlant2: (plant: sealed_case_classes.Plant)String
     
+
+	val f: Plant = Fruit("apple")             //> f  : sealed_case_classes.Plant = Fruit(apple)
+	f match {
+		case Fruit(name) => "fruit"
+	}                                         //> res1: java.lang.String = fruit
 
 
 }
