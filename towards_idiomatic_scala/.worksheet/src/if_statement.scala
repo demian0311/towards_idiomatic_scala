@@ -33,6 +33,10 @@ object if_statement {;import org.scalaide.worksheet.runtime.library.WorksheetSup
   
   status2(19);System.out.println("""res3: String = """ + $show(res$3));$skip(13); val res$4 = 
   status2(1);System.out.println("""res4: String = """ + $show(res$4));$skip(14); val res$5 = 
-  status2(65);System.out.println("""res5: String = """ + $show(res$5))}
+  status2(65);System.out.println("""res5: String = """ + $show(res$5));$skip(20); val res$6 = 
+  
+  if(true) "foo";System.out.println("""res6: Any = """ + $show(res$6));$skip(17); val res$7 = 
+	if(false) "foo";System.out.println("""res7: Any = """ + $show(res$7));$skip(28); val res$8 = 
+  if(true) "foo" else "bar";System.out.println("""res8: java.lang.String = """ + $show(res$8))}
   
 }

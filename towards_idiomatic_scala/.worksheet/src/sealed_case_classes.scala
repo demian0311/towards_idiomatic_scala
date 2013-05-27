@@ -1,8 +1,8 @@
 object sealed_case_classes {
-    sealed abstract class Plant
+    class Plant
 
     case class Fruit(name: String) extends Plant
-    case class Vegetable(name: String) extends Plant;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(202); 
+    case class Vegetable(name: String) extends Plant;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(186); 
 
     val apple: Plant = Fruit("apple");System.out.println("""apple  : sealed_case_classes.Plant = """ + $show(apple ));$skip(205); 
     def howAboutThisPlant(plant: Plant): String = {
@@ -21,8 +21,13 @@ object sealed_case_classes {
         plant match {
             case Fruit(name) => "found a fruit: " + name
             case Vegetable(_) => "didn't expect a veggie"
-        };System.out.println("""howAboutThisPlant2: (plant: sealed_case_classes.Plant)String""")}
+        };System.out.println("""howAboutThisPlant2: (plant: sealed_case_classes.Plant)String""");$skip(37); 
     
+
+	val f: Plant = Fruit("apple");System.out.println("""f  : sealed_case_classes.Plant = """ + $show(f ));$skip(44); val res$1 = 
+	f match {
+		case Fruit(name) => "fruit"
+	};System.out.println("""res1: java.lang.String = """ + $show(res$1))}
 
 
 }

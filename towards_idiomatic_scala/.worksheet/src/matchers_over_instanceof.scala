@@ -18,6 +18,16 @@ object matchers_over_instanceof {
         }
     };System.out.println("""howAboutThisPlant: (plant: matchers_over_instanceof.Plant)String""");$skip(34); val res$0 = 
     
-    howAboutThisPlant(apple);System.out.println("""res0: String = """ + $show(res$0))}
+    howAboutThisPlant(apple);System.out.println("""res0: String = """ + $show(res$0));$skip(208); 
+
+    def howAboutThisPlant2(plant: Plant): String = {
+        plant match {
+            case Fruit(name)  => "found a fruit: " + name
+            case Vegetable(_) => "didn't expect a veggie"
+        }
+    };System.out.println("""howAboutThisPlant2: (plant: matchers_over_instanceof.Plant)String""");$skip(35); val res$1 = 
+    
+    howAboutThisPlant2(apple);System.out.println("""res1: String = """ + $show(res$1))}
+
 
 }

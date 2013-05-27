@@ -18,11 +18,21 @@ object either {
     };System.out.println("""findUserById: (id: Int)Either[String,foo.either.User]""");$skip(21); val res$0 = 
 
     findUserById(1);System.out.println("""res0: Either[String,foo.either.User] = """ + $show(res$0));$skip(20); val res$1 = 
-    findUserById(3);System.out.println("""res1: Either[String,foo.either.User] = """ + $show(res$1));$skip(134); 
+    findUserById(3);System.out.println("""res1: Either[String,foo.either.User] = """ + $show(res$1));$skip(35); 
+
+
+    val result = findUserById(1);System.out.println("""result  : Either[String,foo.either.User] = """ + $show(result ));$skip(168); 
+    
+    if(result.isRight){
+      println("found a user: " + result.right.get.username)
+    }
+    else if(result.isLeft){
+      println("error: " + result.left)
+    };$skip(146); 
 
     findUserById(1) match {
         case Right(u) => println("found a user: " + u.username)
-        case Left(m) => println(m)
+        case Left(m) => println("error: " + m)
     }}
 
 }

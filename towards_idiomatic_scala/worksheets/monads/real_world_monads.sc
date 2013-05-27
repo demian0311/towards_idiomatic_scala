@@ -1,17 +1,21 @@
 object real_world_monads {
     case class User(id: Integer, username: String)
-    case class Book(title: String, checkedOutByUser: String, isOverdue: Boolean)
+    case class Book(
+    		title: String,
+    		checkedOutByUser: String,
+    		isOverdue: Boolean)
 
+		// List is a Monad
     val books = List(
-        Book("Programming in Scala", "foo", false),
-        Book("Programming Perl", "bar", true),
-        Book("Getting Things Done", "foo", true)) //> books  : List[real_world_monads.Book] = List(Book(Programming in Scala,foo,f
-                                                  //| alse), Book(Programming Perl,bar,true), Book(Getting Things Done,foo,true))
+        Book("Programming in Scala", "Alice", false),
+        Book("Release It!", "Alice", true),
+        Book("Starting Strength", "Bob", true),
+        Book("Getting Things Done", "Alice", true))
 
+		// Option is a monad
     def findUserById(id: Integer): Option[User] = {
-    			println("findUserById(" + id + ")")
-        if (id == 0) Some(User(0, "foo")) else None
-    }                                             //> findUserById: (id: Integer)Option[real_world_monads.User]
+        if (id == 0) Some(User(0, "Alice")) else None
+    }
 
     def findOverdueBookTitlesForUserId(id: Integer): List[String] = {
         for {
@@ -20,14 +24,28 @@ object real_world_monads {
             if (book.checkedOutByUser == user.username)
             if (book.isOverdue)
         } yield (book.title)
-    }                                             //> findOverdueBookTitlesForUserId: (id: Integer)List[String]
+    }
 
-    findOverdueBookTitlesForUserId(0)             //> findUserById(0)
-                                                  //| findUserById(0)
-                                                  //| findUserById(0)
-                                                  //| res0: List[String] = List(Getting Things Done)
-		findOverdueBookTitlesForUserId(1) //> findUserById(1)
-                                                  //| findUserById(1)
-                                                  //| findUserById(1)
-                                                  //| res1: List[String] = List()
+    findOverdueBookTitlesForUserId(0)
+		findOverdueBookTitlesForUserId(1)
+		
+		/*
+		books.filter{_.checkedOutByUser == "Alice"}
+       
+    def findOverdueBookTitlesForUserId2(id: Integer): List[String] = {
+			val foo = for{
+				user <- findUserById(id)
+				_ <- Some(println("user: " + user))
+				book <- books.filter{_.checkedOutByUser == "Alice"}
+			} yield (book)
+
+			println("foo: " + foo)
+
+			List()
+    }
+
+		findOverdueBookTitlesForUserId2(0)
+		*/
+		
+            
 }

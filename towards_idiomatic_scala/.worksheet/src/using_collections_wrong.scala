@@ -1,7 +1,7 @@
 import com.sun.org.apache.xalan.internal.xsltc.compiler.ForEach
 
 object using_collections_wrong {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(159); 
-  val vegetables = Vector("asparagus", "brocolli", "cabbage");System.out.println("""vegetables  : scala.collection.immutable.Vector[java.lang.String] = """ + $show(vegetables ));$skip(38); 
+  val vegetables = Vector("asparagus", "broccoli", "cabbage");System.out.println("""vegetables  : scala.collection.immutable.Vector[java.lang.String] = """ + $show(vegetables ));$skip(38); 
   
 
   var hasCabbage: Boolean = false;System.out.println("""hasCabbage  : Boolean = """ + $show(hasCabbage ));$skip(103); 

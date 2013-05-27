@@ -26,9 +26,10 @@ object option_over_null {
       case Some(value) => value == "green"
       case None => false
     }
-  };System.out.println("""isThisGreenVegetable1: (v: option_over_null.Vegetable)Boolean""");$skip(54); val res$0 = 
+  };System.out.println("""isThisGreenVegetable1: (v: option_over_null.Vegetable)Boolean""");$skip(58); val res$0 = 
+  
 
-  isThisGreenVegetable(Vegetable("asparagus", None));System.out.println("""res0: Boolean = """ + $show(res$0))}
+  isThisGreenVegetable1(Vegetable("asparagus", None));System.out.println("""res0: Boolean = """ + $show(res$0))}
 
 
 }
