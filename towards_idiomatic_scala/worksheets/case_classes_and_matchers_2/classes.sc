@@ -17,9 +17,26 @@ object classes {
 	def fizzBuzz(n: Int) = n + ":" + (if(n % 3 == 0) "fizz" else "") + (if(n % 5 == 0) "buzz" else "")
                                                   //> fizzBuzz: (n: Int)java.lang.String
 
-	(1 to 20) map {fizzBuzz(_)}               //> res1: scala.collection.immutable.IndexedSeq[java.lang.String] = Vector(1:, 2
-                                                  //| :, 3:fizz, 4:, 5:buzz, 6:fizz, 7:, 8:, 9:fizz, 10:buzz, 11:, 12:fizz, 13:, 1
-                                                  //| 4:, 15:fizzbuzz, 16:, 17:, 18:fizz, 19:, 20:buzz)
+	(1 to 20) map {fizzBuzz(_)} mkString "\n" //> res1: String = 1:
+                                                  //| 2:
+                                                  //| 3:fizz
+                                                  //| 4:
+                                                  //| 5:buzz
+                                                  //| 6:fizz
+                                                  //| 7:
+                                                  //| 8:
+                                                  //| 9:fizz
+                                                  //| 10:buzz
+                                                  //| 11:
+                                                  //| 12:fizz
+                                                  //| 13:
+                                                  //| 14:
+                                                  //| 15:fizzbuzz
+                                                  //| 16:
+                                                  //| 17:
+                                                  //| 18:fizz
+                                                  //| 19:
+                                                  //| 20:buzz
   
   
   def defineNumber(num: Int): String = {
